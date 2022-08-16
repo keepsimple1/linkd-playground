@@ -16,8 +16,8 @@ systemd-socket-activate \
     -l 9987 \
     --fdname=ssh \
     -E SSH_AUTH_SOCK \
-    -E RUST_BACKTRACE \
-    -E RUST_LOG=librad=trace,link_crypto=trace,gitd_lib=trace,rustls=trace,futures_lite=trace \
+    -E RUST_BACKTRACE=1 \
+    -E RUST_LOG=librad=trace,link_crypto=info,gitd_lib=trace,rustls=info,futures_lite=info \
     ./target/debug/lnk-gitd \
     /tmp/link-local-1 \
     --linkd-rpc-socket $XDG_RUNTIME_DIR/link-peer-$peer_id-rpc.socket \
